@@ -5,6 +5,7 @@
 
 Amazon SageMaker is a fully managed service that removes the heavy lifting from each step of the machine learning workflow, and provides every developer and data scientist with the ability to build, train, and deploy machine learning (ML) models quickly. In this interactive workshop, we will work on the different aspects of the ML workflow to build, train, and deploy a model using all the capabilities of Amazon SageMaker including the ones that we announced at re:Invent 2019. We will use the Amazon SageMaker to build, train & debug models with Amazon SageMaker Debugger, and deploy & monitor with Amazon SageMaker Model Monitor. Let’s build together!
 
+**Duration:** 90 minutes
 
 ## Datasets
 
@@ -29,37 +30,41 @@ First, you will create an Amazon SageMaker managed Jupyter notebook instance.
 
 An **Amazon SageMaker notebook instance** is a fully managed ML compute instance running the <a href="http://jupyter.org/">**Jupyter Notebook**</a> application. Amazon SageMaker manages creating the instance and related resources. 
 
-1. Login to your AWS Account.
+**1.** Login to your AWS Account.
 
-1. In **Services** menu, select **Amazon SageMaker**.
+**2.** In **Services** menu, select **Amazon SageMaker**.
 
 <img src="images/search_sagemaker.png" alt="Search SageMaker" width="700px" />
 
-2. In the left navigation pane, click **Notebook instances**.
+**3.** Change the Region in the top-right corner to **Europe (Ireland) eu-west-1**.
 
-3. Click **Create notebook instance**, then configure:
+While Amazon SageMaker is available in all regions, the data for this lab is located in the Ireland region. Selecting this region will speed-up data processing for this lab.
+
+**4.** In the left navigation pane, click **Notebook instances**.
+
+**5.** Click **Create notebook instance**, then configure:
 
 - **Notebook instance name:** `Workshop`
 - **Notebook instance type:** _ml.t2.medium_
 
 <img src="images/create_notebook_instance_screen.png" alt="Create Notebook Instance screen" width="700px" />
 
-3. In the **IAM role**, select **Create New Role** and configure:
+**6.** In the **IAM role**, select **Create New Role** and configure:
 
 - **S3 buckets:** ⊙ _None_
 - Click **Create role**
 
 <img src="images/create_notebook_instance_role.png" alt="Create Notebook Instance Role" width="600px" />
 
-1. Click **Create notebook instance** (at the bottom of the page).
+**7.** Click **Create notebook instance** (at the bottom of the page).
 
 A new Amazon SageMaker Notebook instance will be launched. It will take approximately 3 minutes to be ready.
 
-1. Wait until the **Status** changes to **InService**.
+**8.** Wait until the **Status** changes to **InService**.
 
 <img src="images/notebook_instance_in_service.png" alt="Notebook instance in service" width="700px" />
 
-1. Click **Open JupyterLab**.
+**9.** Click **Open JupyterLab**.
 
 The Jupyter Lab interface will load, as shown below:
 
@@ -69,7 +74,7 @@ The Jupyter Lab interface will load, as shown below:
 
 All the code of this workshop is implemented and available for download from this GitHub repository. You will clone the GitHub repository into the Amazon SageMaker notebook instance and access the Jupyter Notebooks to run the workshop.
 
-1. From the file menu, click on **New > Terminal**.
+**10.** From the file menu, click on **New > Terminal**.
 
 <img src="images/jupyter_new_terminal.png" alt="Jupyter New Terminal tab" width="500px" />
 
@@ -82,13 +87,14 @@ This will open a terminal tab in the Jupyter Lab interface:
 ```
 cd SageMaker/
 git clone https://github.com/aws-john/reinvent2019-aim362-sagemaker-debugger-model-monitor.git
+
 ```
 
 When the clone operation completes, the folder **reinvent2019-aim362-sagemaker-debugger-model-monitor** will appear automatically in the file browser on the left (if not, you can hit the **Refresh** button)
 
 <img src="images/jupyter_clone.png" alt="Jupyter Cloned Workshop Screen" width="700px" />
 
-1. Browse to the folder **01\_train\_and\_debug** and open the file **train\_and\_debug.ipynb** to get started.
+**11.** Browse to the folder **01\_train\_and\_debug** and open the file **train\_and\_debug.ipynb** to get started.
 
 ## Modules
 
@@ -107,14 +113,31 @@ Here are some tips for using the notebook:
   - While a section is showing `[*]:`, **always wait** until the processing is finished!
 - Once a section has finished running, it will display a number, such as: `[1]:`
 
-1. Please read through the notebook, executing each section. Be sure to wait until a number (eg `In [1]:`) is displayed before continuing to the next section.
+**12.** Please read through the notebook, executing each section. Be sure to wait until a number (eg `In [1]:`) is displayed before continuing to the next section.
 
 Once you have finished the **01 train and debug** module, go back a directory and open the **02 deploy and monitor** module.
 
 ## Clean-Up
 
+Once you have finished the two modules, please follow these instructions to delete resources and prevent any further costs for your AWS Account.
 
+**13.** Close the **Jupyter Lab** tab in your web browser.
 
+**14.** Return to the Amazon SageMaker tab in your web browser (with the orange box icon).
+
+**15.** In the left navigation pane, click **Notebook instances** (this page might already be displayed).
+
+**16.** Click the **Workshop** instance.
+
+**17.** Click **Stop** (at the top of the page).
+
+The status will change to **Stopping**.
+
+**18.** Wait until the status changes to **Stopped**. (This should take a few minutes.)
+
+**19.** Click **Delete** and confirm the deletion.
+
+You have now finished the lab.
 
 ## License
 
