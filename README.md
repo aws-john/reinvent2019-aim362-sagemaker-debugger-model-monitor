@@ -51,7 +51,7 @@ While Amazon SageMaker is available in all regions, the data for this lab is loc
 
 **6.** In the **IAM role**, select **Create New Role** and configure:
 
-- **S3 buckets:** ⊙ _None_
+- **S3 buckets:** ⊙ _Any S3 bucket_
 - Click **Create role**
 
 <img src="images/create_notebook_instance_role.png" alt="Create Notebook Instance Role" width="600px" />
